@@ -1,0 +1,128 @@
+!!!
+%html
+  %head
+    / set the encoding of your site
+    %meta{:charset => "utf-8"}
+      / set the viewport width and initial-scale on mobile devices
+      %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+        %title ShadyNiks
+        / include the site google fonts
+        %link{:href => "http://fonts.googleapis.com/css?family=Lato:300,400,700,900,100italic,300italic,400italic,700italic,900italic%7cMontserrat%7cCrimson+Text:400,400italic,600,600italic,700,700italic%7cRaleway:400,200,300,500,600,700,800,900%7cMerriweather:400,300italic,300,400italic,700,700italic,900", :media => "all", :rel => "stylesheet", :type => "text/css"}
+          / include bootstrap's stylesheet
+          %link{:href => "/stylesheets/bootstrap.css", :media => "all", :rel => "stylesheet", :type => "text/css"}
+            / include the site stylesheet
+            %link{:href => "/stylesheets/all.css", :media => "all", :rel => "stylesheet", :type => "text/css"}
+  %body
+    / main container of all the page elements
+    #wrapper
+      / w1 of the page
+      .w1
+        / header of the page
+        %header#header.container-fluid
+          .row
+            .col-xs-12
+              / logo of the page
+              .logo
+                %a{:href => "javascript:void(0)"}
+                  %img.img-responsive{:alt => "ShadyNiks", :src => "images/logo.png"}/
+              / nav of the page
+              #nav
+                %a.nav-opener{:href => "javascript:void(0)"}
+                  %span
+                  %span
+                  %span
+                .nav-holder
+                  %a.btn-close{:href => "javascript:void(0)"}
+                    %i.fa.fa-times
+                  -#%form.search-form{:action => "#"}
+                    %input.form-control{:placeholder => "Search...", :type => "search"}
+                      %button.btn.btn-default{:type => "submit"}
+                        %i.fa.fa-search
+                  %ul.list-inline
+                    %li
+                      %a{:href => "/blog"} Home
+                  .nav-posts
+                    %strong.title{:style=>"color:#ffcc39;"}
+                      What is this?
+                    .banner-gallery
+                      .column.social
+                        .footer-logo
+                          .logo
+                            %a{:href => "javascript:void(0)"}
+                              %img.img-responsive{:alt => "ShadyNiks", :src => "images/logo.png"}/
+                        %p ShadyNiks is a blog dedicated to express the thoughts of the ambiguous, to explore the unimagined and to question 'why not'
+                  %h3
+                    %span.txt{:style=>"color:#ffcc39;"}
+                      BE SOCIAL
+                  %ul.social-networks.list-inline
+                    %li
+                      %a{:href => "javascript:void(0)"}
+                        %i.fa.fa-facebook
+                    %li
+                      %a{:href => "javascript:void(0)"}
+                        %i.fa.fa-twitter
+                    %li
+                      %a{:href => "javascript:void(0)"}
+                        %i.fa.fa-google-plus
+                  -#%span.copyrights
+                    \&copy; 2014
+                    = succeed "." do
+                      %a{:href => "javascript:void(0)"} htmlbeans
+                    All rights reserved.
+        / contain main informative part of the site
+        %main#main{:role => "main"}
+          =yield
+
+        / footer-holder of the page
+        .footer-holder.parallax-holder
+          .post-over
+          .container
+            / footer of the page
+            %footer#footer.row
+              .col-xs-12
+                %span.copyrights
+                  \&copy; 2015
+                  = succeed "." do
+                    %a{:href => "javascript:void(0)"} shadyniks
+                  All rights reserved.
+                %ul.footer-nav.list-inline
+                  %li
+                    %a{:href => "javascript:void(0)"} HOME
+                  %li
+                    %a{:href => "javascript:void(0)"} CONTACT
+    / include jQuery library
+    %script{:src => "js/jquery-1.11.2.min.js", :type => "text/javascript"}
+    / include Bootstrap's JavaScript
+    %script{:src => "js/bootstrap.min.js", :type => "text/javascript"}
+    / include custom JavaScript
+    %script{:src => "js/jquery.main.js", :type => "text/javascript"}
+    
+    :javascript
+      if (navigator.userAgent.match(/IEMobile\/10\.0/) || navigator.userAgent.match(/MSIE 10.*Touch/)) {
+        var msViewportStyle = document.createElement('style')
+        msViewportStyle.appendChild(
+          document.createTextNode(
+            '@-ms-viewport{width:auto !important}'
+          )
+        )
+        document.querySelector('head').appendChild(msViewportStyle)
+      }
+
+      jQuery('#nav [data-toggle="dropdown"][href!="#"]').on('click', function() {
+          if(jQuery(this.parentNode).hasClass('open')) {
+              location.href = this.href;
+          }
+      });
+
+      jQuery('[data-toggle="dropdown"]').each(function() {
+          var item = jQuery(this),
+              parent = item.parent();
+           
+          parent.one('mousemove', function() {
+              parent.hover(function() {
+                  parent.addClass('open');
+              }, function() {
+                  parent.removeClass('open');
+              }).trigger('mouseover');
+          });
+      });

@@ -1,0 +1,32 @@
+- @title = "Welcome"
+
+.container-fluid
+  .row
+    .col-xs-12
+      .row
+        / main-gallery of the page
+        %section.main-gallery
+          .mask
+            .slideset
+              .slide
+                .bg-stretch
+                  %img{:alt => "image description", :src => "https://missiongalacticfreedom.files.wordpress.com/2013/10/boom-shiva.jpg?w=1520&h=600"}/
+                .over
+                  .post-over
+                    .box
+                      .block
+                        %h1
+                          %a{:href => "carousel-post.html"} The Immortal Sage
+                        %ul.add-nav.list-inline
+                          %li
+                            by
+                            %a{:href => "javascript:void(0);"} ShadyNiks
+                          %li
+                            %time{:datetime => "2015-01-01"} Jun 27, 2015
+                          %li
+                            %a{:href => "javascript:void(0);"} POEM
+              
+          / %a.btn-prev{:href => "#"}
+          /   %i.fa.fa-angle-left
+          / %a.btn-next{:href => "#"}
+          /   %i.fa.fa-angle-right
