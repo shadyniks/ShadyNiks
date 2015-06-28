@@ -5,9 +5,9 @@ Shadyniks::App.controllers :blog do
     render 'blog/index'
   end
 
-  get :read, :with => :id do
-    @post = Post.find_by_id(params[:id])
-    logger.debug @post.inspect
+  get :read, :with => :name do
+    @post = Post.by_name(params[:name])
+    render 'blog/show'
   end
 
 end

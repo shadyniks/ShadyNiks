@@ -1,9 +1,246 @@
-- @title = @post.title
-#show
-  .post
-    .title= @post.title
-    .date= time_ago_in_words(@post.created_at || Time.now) + ' ago'
-    .body= simple_format(@post.body)
-    .details
-      .author Posted by #{@post.account.email}
-%p= link_to 'View all posts', url_for(:blog, :index)
+.container-fluid
+  .row
+    .col-xs-12
+      .row
+        / main-gallery of the page
+        %section.main-banner.post
+          .parallax-holder.add-banner
+            .parallax-frame
+              %img{:alt => "Image Description", :height => "1420", :src => "https://missiongalacticfreedom.files.wordpress.com/2013/10/boom-shiva.jpg", :width => "2000"}
+/ post-info of the page
+%section.post-info
+  .progress-bar-holder
+    .progressbar &nbsp;
+    %span.progress-info &nbsp;
+  .container
+    .row
+      .col-xs-12
+        %article.main-post
+          .txt-box
+            %p Many a times the word Destruction or Destroyer is taken in a negative light. Forever has the populus talked about Growth and Progress, but have we ever questioned Why, And till what end will we continue to grow. Sometimes it becomes necessary to stop and realise the repercussions of this so called 'Progress'. There comes a time when you have to decide whether to continue living in the ignorance of eventuality or end the chapter right there. Every entity in this universe has a lifespan within which it is allowed to prosper and grow. The flag on the other side of the river, the arch at the end of the journey, it is there for a reason. If you try to extend it, expect more from it, the entity ceases to be what it originally was and becomes something foul, something ugly.
+          / blockquote of the page
+          %blockquote.blockquote
+            %p &ldquo;From the White Mist Rises The True Master of Death&rdquo;
+            %footer
+              %cite{:title => "Source Title"} Coonal the Bande
+          %h2{:style=>"text-align:center;"} The Immortal Sage
+          %p{:style=>"text-align:center;"}
+            Trident armed warrior sage
+            %br
+            Clad in tiger hide,
+            %br
+            Face covered with ascetic's mark,
+            %br
+            Adoring the third eye.
+            %br
+
+            %br
+            Smoking weed in high blue mountain
+            %br
+            Where no soul does survive,
+            %br
+            A jet black snake around his neck
+            %br
+            Of pulsating blue light.
+            %br
+
+            %br
+            Wilder mane of thick black hair
+            %br
+            Wound in matt at top,
+            %br
+            Streaming down this very crown
+            %br
+            A river tamed in dreaded lock.
+            %br
+
+            %br
+            An immortal sage of timeless descent
+            %br
+            Ageless body don't weather at all,
+            %br
+            Since beginning he meditates in silence
+            %br
+            In darkness, he waits for the call.
+            %br
+
+            %br
+            When Evil rise in epic proportions
+            %br
+            When Righteous fight for wrong,
+            %br
+            When nature's temper is at its peak
+            %br
+            And the list of Wars is long.
+            %br
+
+            %br
+            Then cries the mighty bull
+            %br
+            His verdict, A sad song,
+            %br
+            Tears in his eyes the sage rises
+            %br
+            Weaves a spell too strong.
+            %br
+
+            %br
+            First the air thrums with sound of fire
+            %br
+            Following the divine beat,
+            %br
+            Then begins the Dance of Death
+            %br
+            As the Earth quakes under his feet.
+            %br
+
+            %br
+            The Third Eye unfolds, as the dance begins
+            %br
+            Engulfs the world in its majestic flame,
+            %br
+            Mountains melt and Ocean rises,
+            %br
+            Playing its part in his conspired game.
+            %br
+
+            %br
+            When all is done and none are left
+            %br
+            Then ends this lamenting song,
+            %br
+            The Earth is peaceful and quiet again
+            %br
+            Ready once more to be born.
+          %footer{:style=>"text-align:center;"}
+            %cite{:title => "Source Title"} - ShadyNiks
+
+.container-fluid
+  .row
+    / fullwidth-post of the page
+    .col-xs-12.fullwidth-post.add
+      .row
+        / main-gallery of the page
+        .banner-gallery.parallax-holder
+          .parallax-frame
+            %img{:alt => "Image Description", :height => "1333", :src => "https://missiongalacticfreedom.files.wordpress.com/2013/10/boom-shiva.jpg", :width => "2000"}/
+/ related-posts of the page
+.container.related-posts
+  .row
+    .col-xs-12
+      / post-buttons of the page
+      .post-buttons
+        / social-networks of the page
+        %ul.social-networks.list-inline
+          %li
+            %a{:href => "#"}
+              %i.fa.fa-facebook
+          %li
+            %a{:href => "#"}
+              %i.fa.fa-twitter
+          %li
+            %a{:href => "#"}
+              %i.fa.fa-google-plus
+          %li
+            %a{:href => "#"}
+              %i.fa.fa-pinterest-square
+      
+      / comments-block of the page
+      -#.comments-block
+        / comments-heading of the page
+        %header.commnents-heading
+          %h2
+            %span.txt COMMENTS
+          %a.threecomments{:href => "#"}
+            %span.num 3
+            comments
+        / comments-holder of the page
+        .comments-holder
+          / comments-box of the page
+          .comments-box
+            %a.alignleft{:href => "#"}
+              %img{:alt => "image description", :src => "http://placehold.it/101x103"}
+            .txt-block
+              .box
+                %h3
+                  %a{:href => "#"} Easton Maxwell
+                %ul.comment-nav.list-inline
+                  %li
+                    %time{:datetime => "2015-01-01"}
+                      %i.fa.fa-clock-o
+                      March 26, 2014 at 12:00am
+                  %li
+                    %a{:href => "#"} Reply
+              %p Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+          / comments-box of the page
+          .comments-box
+            %a.alignleft{:href => "#"}
+              %img{:alt => "image description", :src => "http://placehold.it/102x102"}
+            .txt-block
+              .box
+                %h3
+                  %a{:href => "#"} Rodolph Braxton
+                %ul.comment-nav.list-inline
+                  %li
+                    %time{:datetime => "2015-01-01"}
+                      %i.fa.fa-clock-o
+                      March 26, 2014 at 12:00am
+                  %li
+                    %a{:href => "#"} Reply
+              %p Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat.
+          / onelevel of the page
+          .onelevel
+            / comments-box of the page
+            .comments-box
+              %a.mail-reply{:href => "#"}
+                %i.fa.fa-share
+              %a.alignleft{:href => "#"}
+                %img{:alt => "image description", :src => "http://placehold.it/102x103"}
+              .txt-block
+                .box
+                  %h3
+                    %a{:href => "#"} Ken Oz
+                  %ul.comment-nav.list-inline
+                    %li
+                      %time{:datetime => "2015-01-01"}
+                        %i.fa.fa-clock-o
+                        March 26, 2014 at 12:00am
+                    %li
+                      %a{:href => "#"} Reply
+                %p Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat.
+            / twolevel of the page
+            .twolevel
+              / comments-box of the page
+              .comments-box
+                %a.mail-reply{:href => "#"}
+                  %i.fa.fa-share
+                %a.alignleft{:href => "#"}
+                  %img{:alt => "image description", :src => "http://placehold.it/102x102"}
+                .txt-block
+                  .box
+                    %h3
+                      %a{:href => "#"} Odell Matthew
+                    %ul.comment-nav.list-inline
+                      %li
+                        %time{:datetime => "2015-01-01"}
+                          %i.fa.fa-clock-o
+                          March 26, 2014 at 12:00am
+                      %li
+                        %a{:href => "#"} Reply
+                  %p Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat.
+        / form-area of the page
+        .form-area
+          %h2 LEAVE A COMMENT
+          / comment-form of the page
+          %form.comment-form.validate-form{:action => "#"}
+            %fieldset
+              .form-group
+                .form-col.input-holder
+                  %input.form-control.required{:placeholder => "Your Name *", :type => "text"}
+                .form-col.input-holder
+                  %input.form-control.required-email{:placeholder => "Your Email*", :type => "email"}
+                .form-col.input-holder
+                  %input.form-control.required{:placeholder => "Subject", :type => "text"}
+              .form-group
+                %textarea.form-control.textarea{:cols => "30", :placeholder => "Comment", :rows => "10"}
+              %button.btn.btn-primary{:type => "submit"} Submit
