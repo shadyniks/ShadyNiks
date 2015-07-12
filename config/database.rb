@@ -25,7 +25,7 @@ ActiveRecord::Base.configurations[:production] = {
   :host=> 'ec2-54-83-57-86.compute-1.amazonaws.com',
   :database  => 'd2m5l3ek267aoh',
   :username => 'wsxatmrpjbdbvu',
-  :password => 'v9jlTFwQibYoYz1skmxgfkncsw'
+  :password => 'v9jlTFwQibYoYz1skmxgfkncsw',
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   :pool => 5
