@@ -20,7 +20,11 @@ ActiveRecord::Base.configurations[:development] = {
 }
 
 ActiveRecord::Base.configurations[:production] = {
-  :adapter => 'postgresql'
+  :adapter => 'postgresql',
+  :encoding => 'unicode',
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  :pool => 5
 
 }
 
