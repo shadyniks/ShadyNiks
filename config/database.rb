@@ -20,8 +20,7 @@ ActiveRecord::Base.configurations[:development] = {
 }
 
 ActiveRecord::Base.configurations[:production] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'shadyniks_production.db')
+  :adapter => 'postgresql'
 
 }
 
