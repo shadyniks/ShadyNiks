@@ -22,7 +22,7 @@ ActiveRecord::Base.configurations[:development] = {
 ActiveRecord::Base.configurations[:production] = {
   :adapter => 'postgresql',
   :encoding => 'unicode',
-  :host=> 'localhost'
+  :host=> 'localhost',
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   :pool => 5
