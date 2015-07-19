@@ -6,7 +6,8 @@ Shadyniks::App.controllers :blog do
   end
 
   get :read, :with => :name do
-    @post = Post.by_name(params[:name])
+    @post = JSON.parse(Post.by_name(params[:name]).to_json)[0]
+    @post["body"] = Post.makePretty(@post["body"])
     render 'blog/show'
   end
 

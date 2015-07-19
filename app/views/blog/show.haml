@@ -16,104 +16,28 @@
     .row
       .col-xs-12
         %article.main-post
-          .txt-box
-            %p Many a times the word Destruction or Destroyer is taken in a negative light. Forever has the populus talked about Growth and Progress, but have we ever questioned Why, And till what end will we continue to grow. Sometimes it becomes necessary to stop and realise the repercussions of this so called 'Progress'. There comes a time when you have to decide whether to continue living in the ignorance of eventuality or end the chapter right there. Every entity in this universe has a lifespan within which it is allowed to prosper and grow. The flag on the other side of the river, the arch at the end of the journey, it is there for a reason. If you try to extend it, expect more from it, the entity ceases to be what it originally was and becomes something foul, something ugly.
-          / blockquote of the page
-          %blockquote.blockquote
-            %p &ldquo;From the White Mist Rises The True Master of Death&rdquo;
-            %footer
-              %cite{:title => "Source Title"} Coonal the Bande
-          %h2{:style=>"text-align:center;"} The Immortal Sage
-          %p{:style=>"text-align:center;"}
-            Trident armed warrior sage
-            %br
-            Clad in tiger hide,
-            %br
-            Face covered with ascetic's mark,
-            %br
-            Adoring the third eye.
-            %br
+          - @post["body"].each do |section|
 
-            %br
-            Smoking weed in high blue mountain
-            %br
-            Where no soul does survive,
-            %br
-            A jet black snake around his neck
-            %br
-            Of pulsating blue light.
-            %br
+            - if section["type"] == "description"
+              .txt-box
+                %p=section["content"]
 
-            %br
-            Wilder mane of thick black hair
-            %br
-            Wound in matt at top,
-            %br
-            Streaming down this very crown
-            %br
-            A river tamed in dreaded lock.
-            %br
+            - elsif section["type"] == "quote"
+              %blockquote.blockquote
+                %p 
+                  %span &ldquo;
+                  %span=section["content"][0]["content"]
+                  %span &rdquo;
+                %footer
+                  %cite{:title => "Source Title"}=section["content"][1]["content"]
 
-            %br
-            An immortal sage of timeless descent
-            %br
-            Ageless body don't weather at all,
-            %br
-            Since beginning he meditates in silence
-            %br
-            In darkness, he waits for the call.
-            %br
-
-            %br
-            When Evil rise in epic proportions
-            %br
-            When Righteous fight for wrong,
-            %br
-            When nature's temper is at its peak
-            %br
-            And the list of Wars is long.
-            %br
-
-            %br
-            Then cries the mighty bull
-            %br
-            His verdict, A sad song,
-            %br
-            Tears in his eyes the sage rises
-            %br
-            Weaves a spell too strong.
-            %br
-
-            %br
-            First the air thrums with sound of fire
-            %br
-            Following the divine beat,
-            %br
-            Then begins the Dance of Death
-            %br
-            As the Earth quakes under his feet.
-            %br
-
-            %br
-            The Third Eye unfolds, as the dance begins
-            %br
-            Engulfs the world in its majestic flame,
-            %br
-            Mountains melt and Ocean rises,
-            %br
-            Playing its part in his conspired game.
-            %br
-
-            %br
-            When all is done and none are left
-            %br
-            Then ends this lamenting song,
-            %br
-            The Earth is peaceful and quiet again
-            %br
-            Ready once more to be born.
-          %footer{:style=>"text-align:center;"}
-            %cite{:title => "Source Title"} - ShadyNiks
+            - elsif section["type"] == "poem"
+              %h2{:style=>"text-align:center;"}=section["content"][0]["content"]
+              %p{:style=>"text-align:center;"}=section["content"][1]["content"].gsub("\n", "<br/>").html_safe
+              %footer{:style=>"text-align:center;"}
+                %cite{:title => "Source Title"} 
+                  %span - 
+                  %span=section["content"][2]["content"]
 
 .container-fluid
   .row
