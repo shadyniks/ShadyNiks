@@ -12,7 +12,8 @@ Shadyniks::Admin.controllers :posts do
   end
 
   post :create do
-    @post = Post.new(params[:post])
+    post = params[:post]
+    @post = Post.new(post)
     @post.account = current_account
     if @post.save
       @title = pat(:create_title, :model => "post #{@post.id}")

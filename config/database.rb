@@ -14,9 +14,17 @@
 #   }
 #
 ActiveRecord::Base.configurations[:development] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'shadyniks_development.db')
-
+  # :adapter => 'sqlite3',
+  # :database => Padrino.root('db', 'shadyniks_development.db')
+  :adapter => 'postgresql',
+  :encoding => 'unicode',
+  :host=> 'ec2-54-83-57-86.compute-1.amazonaws.com',
+  :database  => 'd2m5l3ek267aoh',
+  :username => 'wsxatmrpjbdbvu',
+  :password => 'v9jlTFwQibYoYz1skmxgfkncsw',
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  :pool => 5
 }
 
 ActiveRecord::Base.configurations[:production] = {
@@ -33,8 +41,17 @@ ActiveRecord::Base.configurations[:production] = {
 }
 
 ActiveRecord::Base.configurations[:test] = {
-  :adapter => 'sqlite3',
-  :database => Padrino.root('db', 'shadyniks_test.db')
+  # :adapter => 'sqlite3',
+  # :database => Padrino.root('db', 'shadyniks_test.db')
+  :adapter => 'postgresql',
+  :encoding => 'unicode',
+  :host=> 'ec2-54-83-57-86.compute-1.amazonaws.com',
+  :database  => 'd2m5l3ek267aoh',
+  :username => 'wsxatmrpjbdbvu',
+  :password => 'v9jlTFwQibYoYz1skmxgfkncsw',
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  :pool => 5
 
 }
 
