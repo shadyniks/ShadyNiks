@@ -15,7 +15,8 @@ class Post < ActiveRecord::Base
     # puts formatters
     if formatters.nil?
       formatters = {"D" => {"type" => "description"}, "Q" => {"type" => "quote", "sub_formatters" => {"QM" => {"type" => "quote"}, "QA" => {"type" => "author"}}}, 
-                  "P" => {"type" => "poem", "sub_formatters" => {"PT" => {"type" => "title"}, "PM" => {"type" => "poem"}, "PA" => {"type" => "author"}}}}
+                  "P" => {"type" => "poem", "sub_formatters" => {"PT" => {"type" => "title"}, "PM" => {"type" => "poem"}, "PA" => {"type" => "author"}}},
+                    "E" => {"type" => "extract", "sub_formatters" => {"EM" => {"type" => "extract"}, "EA" => {"type" => "author"}}}}
     end
     # puts formatters
     formatters_arr = formatters.keys

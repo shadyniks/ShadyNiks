@@ -6,7 +6,7 @@
         %section.main-banner.post
           .parallax-holder.add-banner
             .parallax-frame
-              %img{:alt => "Image Description", :height => "1420", :src => "https://missiongalacticfreedom.files.wordpress.com/2013/10/boom-shiva.jpg", :width => "2000"}
+              %img{:alt => "Image Description", :height => "1420", :src => "#{@post['image']}", :width => "2000"}
 / post-info of the page
 %section.post-info
   .progress-bar-holder
@@ -31,6 +31,13 @@
                 %footer
                   %cite{:title => "Source Title"}=section["content"][1]["content"]
 
+            - elsif section["type"] == "extract"
+              %blockquote.blockquote.txt-box
+                %p 
+                  %span=section["content"][0]["content"]
+                %footer
+                  %cite{:title => "Source Title"}=section["content"][1]["content"]
+
             - elsif section["type"] == "poem"
               %h2{:style=>"text-align:center;"}=section["content"][0]["content"]
               %p{:style=>"text-align:center;"}=section["content"][1]["content"].gsub("\n", "<br/>").html_safe
@@ -47,7 +54,7 @@
         / main-gallery of the page
         .banner-gallery.parallax-holder
           .parallax-frame
-            %img{:alt => "Image Description", :height => "1333", :src => "https://missiongalacticfreedom.files.wordpress.com/2013/10/boom-shiva.jpg", :width => "2000"}/
+            %img{:alt => "Image Description", :height => "1333", :src => "#{@post['image']}", :width => "2000"}/
 / related-posts of the page
 .container.related-posts
   .row

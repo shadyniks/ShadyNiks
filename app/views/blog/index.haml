@@ -31,6 +31,37 @@
 
 .container-fluid
   .row
+    .col-xs-12
+      .row
+        / main-gallery of the page
+        %section.main-gallery
+          .mask
+            .slideset
+              .slide
+                .bg-stretch
+                  %img{:alt => "image description", :src => "http://miriadna.com/desctopwalls/images/max/Through-violet-forest.jpg"}/
+                .over
+                  .post-over
+                    .box
+                      .block
+                        %h1
+                          %a{:href => "/blog/read/the_ambitious_violet"} The Ambitious Violet
+                        %ul.add-nav.list-inline
+                          %li
+                            by
+                            %a{:href => "javascript:void(0);"} Khalil Gibran
+                          %li
+                            %time{:datetime => "2015-01-01"} Aug 31, 2015
+                          %li
+                            %a{:href => "javascript:void(0);"} STORY
+              
+          / %a.btn-prev{:href => "#"}
+          /   %i.fa.fa-angle-left
+          / %a.btn-next{:href => "#"}
+          /   %i.fa.fa-angle-right
+
+-#.container-fluid
+  .row
     .col-sm-6.col-xs-12.two-cols
       .row
         / main-gallery of the page
