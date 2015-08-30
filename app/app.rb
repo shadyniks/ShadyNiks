@@ -8,7 +8,7 @@ module Shadyniks
     enable :sessions
 
     get "/" do
-      "Hello World!"
+      redirect "/blog"
     end
 
     get :about, :map => '/about_us' do
