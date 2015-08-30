@@ -13,6 +13,7 @@ Shadyniks::Admin.controllers :posts do
 
   post :create do
     post = params[:post]
+    post['urlname'] = post["title"].split(" ").join("_").downcase
     @post = Post.new(post)
     @post.account = current_account
     if @post.save

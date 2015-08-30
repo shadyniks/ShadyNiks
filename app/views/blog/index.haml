@@ -28,3 +28,85 @@
           /   %i.fa.fa-angle-left
           / %a.btn-next{:href => "#"}
           /   %i.fa.fa-angle-right
+
+.container-fluid
+  .row
+    .col-sm-6.col-xs-12.two-cols
+      .row
+        / main-gallery of the page
+        %section.main-gallery
+          .mask
+            .slideset
+              .slide
+                .bg-stretch
+                  %img{:alt => "image description", :src => "http://placehold.it/950x450"}/
+                .post-over
+                  .box
+                    .block
+                      %h2
+                        %a{:href => "post.html"} GALLERY POST
+                      %ul.add-nav.list-inline
+                        %li
+                          by
+                          %a{:href => "#"} Admin
+                        %li
+                          %time{:datetime => "2015-01-01"} Aug 28, 2015
+                        %li
+                          %a{:href => "#"} TRAVELING
+              .slide
+                .bg-stretch
+                  %img{:alt => "image description", :src => "http://placehold.it/950x450"}/
+                .post-over
+                  .box
+                    .block
+                      %h2
+                        %a{:href => "post.html"} GALLERY POST
+                      %ul.add-nav.list-inline
+                        %li
+                          by
+                          %a{:href => "#"} Admin
+                        %li
+                          %time{:datetime => "2015-01-01"} Aug 28, 2015
+                        %li
+                          %a{:href => "#"} TRAVELING
+              .slide
+                .bg-stretch
+                  %img{:alt => "image description", :src => "http://placehold.it/950x450"}/
+                .post-over
+                  .box
+                    .block
+                      %h2
+                        %a{:href => "post.html"} GALLERY POST
+                      %ul.add-nav.list-inline
+                        %li
+                          by
+                          %a{:href => "#"} Admin
+                        %li
+                          %time{:datetime => "2015-01-01"} Aug 28, 2015
+                        %li
+                          %a{:href => "#"} TRAVELING
+          %a.btn-prev{:href => "#"}
+            %i.fa.fa-angle-left
+          %a.btn-next{:href => "#"}
+            %i.fa.fa-angle-right
+    .col-sm-6.col-xs-12.two-cols
+      .row
+        / banner-gallery of the page
+        %article.banner-gallery.trending
+          .bg-stretch
+            %img{:alt => "image description", :src => "http://placehold.it/950x450"}/
+          .post-over
+            .box
+              .block
+                %h2
+                  %a{:href => "post.html"} TRENDING POST
+                %ul.add-nav.list-inline
+                  %li
+                    by
+                    %a{:href => "#"} Admin
+                  %li
+                    %time{:datetime => "2015-01-01"} Aug 28, 2015
+                  %li
+                    %a{:href => "#"} TRAVELING
+                %a.btn-flash{:href => ""}
+                  %i.fa.fa-bolt
