@@ -1,7 +1,7 @@
 Shadyniks::App.controllers :blog do
   
   get :index do
-    @posts = Post.all
+    @posts = JSON.parse(Post.all.to_json)
     render 'blog/index'
   end
 

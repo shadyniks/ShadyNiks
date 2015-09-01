@@ -8,13 +8,13 @@
             .slideset
               .slide
                 .bg-stretch
-                  %img{:alt => "image description", :src => "https://missiongalacticfreedom.files.wordpress.com/2013/10/boom-shiva.jpg?w=1520&h=600"}/
+                  %img{:alt => "image description", :src => "#{@posts[1]['image']}"}/
                 .over
                   .post-over
                     .box
                       .block
                         %h1
-                          %a{:href => "/blog/read/the_immortal_sage"} The Immortal Sage
+                          %a{:href => "/blog/read/#{@posts[1]['urlname']}"}= @posts[1]['title']
                         %ul.add-nav.list-inline
                           %li
                             by
@@ -39,13 +39,13 @@
             .slideset
               .slide
                 .bg-stretch
-                  %img{:alt => "image description", :src => "http://miriadna.com/desctopwalls/images/max/Through-violet-forest.jpg"}/
+                  %img{:alt => "image description", :src => "#{@posts[0]['image']}"}/
                 .over
                   .post-over
                     .box
                       .block
                         %h1
-                          %a{:href => "/blog/read/the_ambitious_violet"} The Ambitious Violet
+                          %a{:href => "/blog/read/#{@posts[0]['urlname']}"}= @posts[0]['title']
                         %ul.add-nav.list-inline
                           %li
                             by
