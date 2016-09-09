@@ -17,6 +17,12 @@ class ArticlesController < ApplicationController
     render :json => article
   end
 
+  def update
+    request_data = JSON.parse(request.body.read)
+    response = Article.update(request_data["data"])
+    render :json => response.first
+  end
+
   def destroy
     response = Article.delete(params["id"]);
     render :json => response

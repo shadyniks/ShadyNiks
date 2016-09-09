@@ -48,6 +48,6 @@
 	</lx-dialog-content>
 	<lx-dialog-footer>
 		<lx-button lx-color="black" lx-type="flat" lx-dialog-close>Cancel</lx-button>
-		<lx-button lx-color="cyan" lx-type="flat" ng-click="createArticle(articleForm)">Create</lx-button>
+		<lx-button lx-color="cyan" lx-type="flat" ng-click="createArticle(articleForm)" ng-bind="otherObj.mode == 'create' ? 'Create' : 'Update'"></lx-button>
 	</lx-dialog-footer>
 </lx-dialog>

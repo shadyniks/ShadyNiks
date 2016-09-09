@@ -12,11 +12,24 @@ angular.module('Services').service('article', function ($http) {
 		});
 	}
 
+	this.edit = function (data) {
+		return $http.put('/articles/' + data.id, {
+			data: data
+		}).then(function (response) {
+			var article = _.findWhere(articles, {id: response.data.id});
+			angular.extend(article, response.data);
+		})
+	}
+
 	this.getAll = function () {
 		return $http.get('/articles/all').then(function (response) {
 			articles = response.data;
 			return articles;
 		});
+	};
+
+	this.getCachedArticles = function () {
+		return articles;
 	};
 
 	this.deleteItem = function (id) {

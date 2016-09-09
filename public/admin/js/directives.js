@@ -3,30 +3,38 @@ angular.module('Directives').directive("addArticle", function($rootScope, articl
 		restrict: "E",
 		templateUrl: "/admin/templates/add_article.html",
 		link: function(scope, element, attrs) {
-			$rootScope.showAddArticle = function() {
+			$rootScope.showAddArticle = function(id) {
 				LxDialogService.open('addArticle');
+				if (id) {
+					scope.otherObj.mode = 'edit';
+					scope.formObj = angular.copy(_.findWhere(article.getCachedArticles(), {id: id}));
+				}
 			}
 
-      var init = function () {
-        scope.formObj = {};
-        scope.otherObj = {};
-      }
+			var init = function () {
+				scope.formObj = {};
+				scope.otherObj = {
+					mode: 'create'
+				};
+			}
 
-      scope.createArticle = function () {
-        if (scope.otherObj.articleForm.$invalid) {
-          return;
-        }
-        article.create(scope.formObj).then(function (data) {
-          console.log(data);
-          LxDialogService.close('addArticle');
-        }, function (data) {
-          console.log(data);
-        });
-      }
+			scope.createArticle = function () {
+				if (scope.otherObj.articleForm.$invalid) {
+					return;
+				}
 
-      scope.$on('lx-dialog__open-start', function(event, dialogId) {
-        init();
-      });
+				article[scope.otherObj.mode](scope.formObj).then(function (data) {
+					console.log(data);
+					LxDialogService.close('addArticle');
+				}, function (data) {
+					console.log(data);
+				});
+			}
+
+			scope.$on('lx-dialog__close-start', function(event, dialogId) {
+				init();
+			});
+			init();
 		}
 	}
 })
