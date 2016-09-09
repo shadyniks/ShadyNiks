@@ -13,8 +13,12 @@ class ArticlesController < ApplicationController
   def create
     request_data = JSON.parse(request.body.read)
     article = Article.new(request_data["data"]) 
-    response = article.save.to_json
+    response = article.save
+    render :json => article
+  end
 
+  def destroy
+    response = Article.delete(params["id"]);
     render :json => response
   end
 end

@@ -1,4 +1,4 @@
-angular.module('Directives').directive("addArticle", function($rootScope, $http, LxDialogService) {
+angular.module('Directives').directive("addArticle", function($rootScope, article, LxDialogService) {
 	return {
 		restrict: "E",
 		templateUrl: "/admin/templates/add_article.html",
@@ -16,9 +16,7 @@ angular.module('Directives').directive("addArticle", function($rootScope, $http,
         if (scope.otherObj.articleForm.$invalid) {
           return;
         }
-        $http.post('/articles', {
-          data: scope.formObj
-        }).then(function (data) {
+        article.create(scope.formObj).then(function (data) {
           console.log(data);
           LxDialogService.close('addArticle');
         }, function (data) {

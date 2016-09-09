@@ -1,41 +1,51 @@
 html{
-  background-color: #EEEEEE
+	background-color: #EEEEEE
 }
 header {
-  width: 100%;
-  height: 60px;
+	width: 100%;
+	height: 60px;
 }
 .header_inner {
-  width: 960px;
-  padding: 20px 0;
-  margin: auto;
+	width: 960px;
+	padding: 20px 0;
+	margin: auto;
 }
 .main_logo {
-  width: 110px;
-  display: inline-block;
+	width: 110px;
+	display: inline-block;
 }
 .add_article {
-  float: right;
-  top: -7px;
+	float: right;
+	top: -7px;
+}
+.article_list_item {
+	background: #FFFFFF;
+	margin-top: 25px;
+}
+.article_description {
+	display: -webkit-box;
+	-webkit-line-clamp: 10;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 .fab__actions--left {
-  right: 40px;
-  bottom: 0;
+	right: 40px;
+	bottom: 0;
 }
 .btn--fab.btn--cyan {
-  color: #FFFFFF;
+	color: #FFFFFF;
 }
 .text-field--is-focus:not(.text-field--fixed-label) .text-field__label {
-  color: #00BCD4;
+	color: #00BCD4;
 }
 .text-field:after {
-  background-color: #00BCD4;
+	background-color: #00BCD4;
 }
 .list-row__content {
-  padding-right: 5px;
+	padding-right: 5px;
 }
 .content {
-  width: 960px;
-  margin: 0 auto;
-  background: #FFFFFF;
+	width: 960px;
+	margin: 0 auto;
 }
