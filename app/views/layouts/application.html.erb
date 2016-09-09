@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- set the encoding of your site -->
+    <meta charset="utf-8">
+    <!-- set the viewport width and initial-scale on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirvana</title>
+    <!-- include the site google fonts -->
+    <link type="text/css" rel="stylesheet" media="all" href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,100italic,300italic,400italic,700italic,900italic%7cMontserrat%7cCrimson+Text:400,400italic,600,600italic,700,700italic%7cRaleway:400,200,300,500,600,700,800,900%7cMerriweather:400,300italic,300,400italic,700,700italic,900'>
+    <!-- include bootstrap's stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/all.css">
+    <script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.main.js"></script>
+    <script type="text/javascript">
+      if (navigator.userAgent.match(/IEMobile\/10\.0/) || navigator.userAgent.match(/MSIE 10.*Touch/)) {
+        var msViewportStyle = document.createElement('style')
+        msViewportStyle.appendChild(
+          document.createTextNode(
+            '@-ms-viewport{width:auto !important}'
+          )
+        )
+        document.querySelector('head').appendChild(msViewportStyle)
+      }
+    </script>
+    <script type="text/javascript">
+      jQuery('#nav [data-toggle="dropdown"][href!="#"]').on('click', function() {
+          if(jQuery(this.parentNode).hasClass('open')) {
+              location.href = this.href;
+          }
+      });
+    </script>
+    <script type="text/javascript">
+      jQuery('[data-toggle="dropdown"]').each(function() {
+          var item = jQuery(this),
+              parent = item.parent();
+           
+          parent.one('mousemove', function() {
+              parent.hover(function() {
+                  parent.addClass('open');
+              }, function() {
+                  parent.removeClass('open');
+              }).trigger('mouseover');
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- w1 of the page
+      -->
+      <div class="w1">
+        <!-- header of the page
+        -->
+        <header class="container-fluid" id="header">
+          <div class="row">
+            <div class="col-xs-12">
+              <!-- logo of the page
+              -->
+              <div class="logo">
+                <a href="javascript:void(0)">
+                  <img alt="ShadyNiks" class="img-responsive" src="/images/logo.png"/>
+                </a>
+              </div>
+              <!-- nav of the page
+              -->
+              <div id="nav">
+                <a class="nav-opener" href="javascript:void(0)">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </a>
+                <div class="nav-holder">
+                  <a class="btn-close" href="javascript:void(0)">
+                    <i class="fa fa-times"></i>
+                  </a>
+                  <ul class="list-inline">
+                    <li>
+                      <a href="/blog">Home</a>
+                    </li>
+                  </ul>
+                  <div class="nav-posts">
+                    <strong class="title" style="color:#ffcc39;">
+                      What is this?
+                    </strong>
+                    <div class="banner-gallery">
+                      <div class="column social">
+                        <div class="footer-logo">
+                          <div class="logo">
+                            <a href="javascript:void(0)">
+                              <img alt="ShadyNiks" class="img-responsive" src="/images/logo.png"/>
+                            </a>
+                          </div>
+                        </div>
+                        <p>ShadyNiks is a blog dedicated to express the thoughts of the ambiguous, to explore the unimagined and to question 'why not'</p>
+                      </div>
+                    </div>
+                  </div>
+                  <h3>
+                    <span class="txt" style="color:#ffcc39;">
+                      BE SOCIAL
+                    </span>
+                  </h3>
+                  <ul class="social-networks list-inline">
+                    <li>
+                      <a href="javascript:void(0)">
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">
+                        <i class="fa fa-google-plus"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main id="main" role="main">
+          <%= yield %>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

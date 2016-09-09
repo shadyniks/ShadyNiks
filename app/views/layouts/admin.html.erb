@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="adminApp">
+  <head>
+	<!-- set the encoding of your site -->
+	<meta charset="utf-8">
+	<title>ShadeSlayer</title>
+
+	<!-- include the site google fonts -->
+	<link type="text/css" rel="stylesheet" media="all" href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,100italic,300italic,400italic,700italic,900italic%7cMontserrat%7cCrimson+Text:400,400italic,600,600italic,700,700italic%7cRaleway:400,200,300,500,600,700,800,900%7cMerriweather:400,300italic,300,400italic,700,700italic,900'>
+	<!-- include bootstrap's stylesheet -->
+	<link rel="stylesheet" type="text/css" href="/admin/css/lumx.css">
+	<link rel="stylesheet" type="text/css" href="/admin/css/base.css">
+	<script type="text/javascript" src="/admin/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/admin/js/velocity.min.js"></script>
+	<script type="text/javascript" src="/admin/js/moment-with-locales.min.js"></script>
+	<script type="text/javascript" src="/admin/js/angular.min.js"></script>
+	<script type="text/javascript" src="/admin/js/lumx.min.js"></script>
+	<script type="text/javascript" src="/admin/js/app.js"></script>
+	<script type="text/javascript" src="/admin/js/directives.js"></script>
+	<script type="text/javascript" src="/admin/js/controllers.js"></script>
+  </head>
+  <body ng-controller="adminController">
+	<header class="bgc-cyan-700">
+	  <div class="header_inner">
+		<img class="main_logo" src="/images/logo.png">
+		<lx-button lx-color="white" lx-size="m" lx-type="raised" class="add_article" ng-click="showAddArticle()">
+		  Add Article
+		</lx-button>
+	  </div>
+	</header>
+	<div class="content mt+++">
+	  <ul class="list">
+		<li class="list-row list-row--multi-line list-row--has-separator">
+			<div class="list-row__primary">
+				<img src="/images/placeholder/1-square.jpg" width="40" height="40" class="img-round">
+			</div>
+
+			<div class="list-row__content">
+				<span class="display-block">Two-line item</span>
+				<span class="display-block fs-body-1 tc-black-2">Secondary text Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam massa quam. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
+			</div>
+
+			<div class="list-row__secondary">
+			  <lx-fab lx-direction="left">
+				<lx-fab-trigger>
+				  <lx-button lx-color="cyan" lx-size="l" lx-type="fab">
+					<lx-icon lx-id="pokeball"></lx-icon>
+					<lx-icon lx-id="adjust"></lx-icon>
+				  </lx-button>
+				</lx-fab-trigger>
+				<lx-fab-actions>
+				  <lx-button lx-size="l" lx-type="fab" lx-color="black" lx-tooltip="Delete" lx-tooltip-position="top">
+					  <lx-icon lx-id="delete"></lx-icon>
+				  </lx-button>
+				  
+				  <lx-button lx-size="l" lx-type="fab" lx-color="black" lx-tooltip="Edit" lx-tooltip-position="top">
+					  <lx-icon lx-id="pencil"></lx-icon>
+				  </lx-button>
+				</lx-fab-actions>
+			  </lx-fab>
+			</div>
+		</li>
+	  </ul>      
+	</div>
+	<add-article></add-article>
+  </body>
+</html>

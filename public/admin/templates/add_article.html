@@ -1,0 +1,53 @@
+<lx-dialog id="addArticle">
+	<lx-dialog-header>
+		<div class="toolbar bgc-cyan-700">
+			<span class="toolbar__label tc-white fs-title">
+			 	Add Article
+			</span>
+
+			<div class="toolbar__right">
+				<lx-button lx-color="white" lx-size="l" lx-type="icon">
+					<lx-icon lx-id="close"></lx-icon>
+				</lx-button>
+			</div>
+		</div>
+	</lx-dialog-header>
+	<lx-dialog-content>
+		<form name="otherObj.articleForm" class="p++">
+			<div flex-container="row" flex-gutter="24">
+				<div flex-item>
+					<lx-text-field lx-label="Title">
+						<input type="text" name="title" ng-model="formObj.title" ng-required="true" />
+					</lx-text-field>
+				</div>
+				<div flex-item>
+					<lx-text-field lx-label="Author">
+						<input type="text" name="author" ng-model="formObj.author" ng-required="true" />
+					</lx-text-field>
+				</div>
+			</div>
+			<lx-text-field lx-label="Body">
+				<textarea name="text" ng-model="formObj.text" ng-required="true"></textarea>
+			</lx-text-field>
+			<div flex-container="row" flex-gutter="24">
+				<div flex-item>
+					<lx-text-field lx-label="Short Name">
+						<input type="text" name="urlname" ng-model="formObj.urlname" ng-required="true" />
+					</lx-text-field>
+				</div>
+				<div flex-item>
+					<lx-text-field lx-label="Type">
+						<input type="text" name="type" ng-model="formObj.category" ng-required="true" />
+					</lx-text-field>
+				</div>
+			</div>
+			<lx-text-field lx-label="Image">
+				<input type="text" name="image" ng-model="formObj.image" ng-required="true" />
+			</lx-text-field>
+		</form>	
+	</lx-dialog-content>
+	<lx-dialog-footer>
+		<lx-button lx-color="black" lx-type="flat" lx-dialog-close>Cancel</lx-button>
+		<lx-button lx-color="cyan" lx-type="flat" ng-click="createArticle(articleForm)">Create</lx-button>
+	</lx-dialog-footer>
+</lx-dialog>
