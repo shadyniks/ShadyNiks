@@ -1,4 +1,4 @@
-angular.module('Directives').directive("addArticle", function($rootScope, article, LxDialogService) {
+angular.module('Directives').directive("addArticle", function($rootScope, article, LxDialogService, LxDatePickerService) {
 	return {
 		restrict: "E",
 		templateUrl: "/admin/templates/add_article.html",
@@ -8,6 +8,7 @@ angular.module('Directives').directive("addArticle", function($rootScope, articl
 				if (id) {
 					scope.otherObj.mode = 'edit';
 					scope.formObj = angular.copy(_.findWhere(article.getCachedArticles(), {id: id}));
+					if (!scope.formObj.sort_date) scope.formObj.sort_date = undefined;
 				}
 			}
 
@@ -35,6 +36,19 @@ angular.module('Directives').directive("addArticle", function($rootScope, articl
 				init();
 			});
 			init();
+		}
+	}
+}).directive('formatDateTime', function() {
+	return {
+		restrict: "A",
+		require: 'ngModel',
+		link: function(scope, element, attrs, ngModel) {
+			ngModel.$parsers.push(function (value) {
+				return new Date(value).toISOString();
+			});
+			ngModel.$formatters.push(function (value) {
+				return new moment(value).format("MM/DD/YYYY");
+			});
 		}
 	}
 })

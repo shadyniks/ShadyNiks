@@ -1,9 +1,7 @@
 <lx-dialog id="addArticle">
 	<lx-dialog-header>
 		<div class="toolbar bgc-cyan-700">
-			<span class="toolbar__label tc-white fs-title">
-			 	Add Article
-			</span>
+			<span class="toolbar__label tc-white fs-title" ng-bind="otherObj.mode == 'create' ? 'Add Article' : 'Edit Article'"></span>
 
 			<div class="toolbar__right">
 				<lx-button lx-color="white" lx-size="l" lx-type="icon">
@@ -41,9 +39,20 @@
 					</lx-text-field>
 				</div>
 			</div>
-			<lx-text-field lx-label="Image">
-				<input type="text" name="image" ng-model="formObj.image" ng-required="true" />
-			</lx-text-field>
+			<div flex-container="row" flex-gutter="24">
+				<div flex-item>
+					<lx-text-field lx-label="Image">
+						<input type="text" name="image" ng-model="formObj.image" ng-required="true" />
+					</lx-text-field>
+				</div>
+				<div flex-item>
+					<lx-date-picker lx-label="Sort Date" lx-color="cyan" lx-input-format="MM/DD/YYYY" ng-model="formObj.sort_date" id="sortDate" ng-click="openDatepicker()" format-date-time>
+						<lx-text-field lx-label="Sort Date">
+							<input type="text" name="urlname" ng-required="true" ng-model="formObj.sort_date" format-date-time/>
+						</lx-text-field>
+					</lx-date-picker>
+				</div>
+			</div>
 		</form>	
 	</lx-dialog-content>
 	<lx-dialog-footer>

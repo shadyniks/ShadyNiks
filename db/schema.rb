@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907181326) do
+ActiveRecord::Schema.define(version: 20160911185037) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160907181326) do
     t.string   "author"
     t.string   "urlname"
     t.string   "category"
+    t.datetime "sort_date"
     t.index ["urlname"], name: "index_articles_on_urlname", unique: true
   end
 
