@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'blog', to: 'blog#index'
+
+  get 'admin', to: 'admin#index'
 
   get '/articles/all', to: 'articles#all'
   resources :articles

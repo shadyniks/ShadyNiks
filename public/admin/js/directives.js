@@ -44,7 +44,7 @@ angular.module('Directives').directive("addArticle", function($rootScope, articl
 		require: 'ngModel',
 		link: function(scope, element, attrs, ngModel) {
 			ngModel.$parsers.push(function (value) {
-				return new Date(value).toISOString();
+				return new Date(value).getTime();
 			});
 			ngModel.$formatters.push(function (value) {
 				return new moment(value).format("MM/DD/YYYY");

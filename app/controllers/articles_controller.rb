@@ -1,13 +1,17 @@
 class ArticlesController < ApplicationController
   protect_from_forgery with: :null_session
-  layout "admin"
-
-  def index
-  end
 
   def all
     articles = Article.all
     render :json => articles
+  end
+
+  def index
+    @articles = Article.all.order(:sort_date)
+  end
+
+  def show
+    @article = Article.find_by(:urlname => params['id'])
   end
 
   def create

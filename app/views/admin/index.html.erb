@@ -1,0 +1,45 @@
+<header class="bgc-cyan-700">
+	<div class="header_inner">
+	<img class="main_logo" src="/images/logo.png">
+	<lx-button lx-color="white" lx-size="m" lx-type="raised" class="add_article" ng-click="showAddArticle()">
+		Add Article
+	</lx-button>
+	</div>
+</header>
+<div class="content mt+++">
+	<ul class="list">
+		<li class="article_list_item list-row list-row--multi-line" ng-repeat="article in articles | orderBy : 'sort_date'">
+			<div class="list-row__primary">
+				<img ng-src="{{article.image}}" width="40" height="40" class="img-round">
+			</div>
+
+			<div class="list-row__content">
+				<span class="display-block" ng-bind="article.title"></span>
+				<span class="display-block fs-body-1 tc-black-2 article_description" ng-bind="article.text"></span>
+			</div>
+
+			<div class="list-row__secondary">
+				<lx-fab lx-direction="left">
+				<lx-fab-trigger>
+					<a href="/articles/{{article.urlname}}" target="_blank">
+						<lx-button lx-color="cyan" lx-size="l" lx-type="fab" lx-tooltip="View" lx-tooltip-position="top">
+							<lx-icon lx-id="pokeball"></lx-icon>
+							<lx-icon lx-id="adjust"></lx-icon>
+						</lx-button>
+					</a>
+				</lx-fab-trigger>
+				<lx-fab-actions>
+					<lx-button lx-size="l" lx-type="fab" lx-color="black" lx-tooltip="Delete" lx-tooltip-position="top" ng-click="deleteArticle(article.id)">
+						<lx-icon lx-id="delete"></lx-icon>
+					</lx-button>
+					
+					<lx-button lx-size="l" lx-type="fab" lx-color="black" lx-tooltip="Edit" lx-tooltip-position="top" ng-click="showAddArticle(article.id)">
+						<lx-icon lx-id="pencil"></lx-icon>
+					</lx-button>
+				</lx-fab-actions>
+				</lx-fab>
+			</div>
+		</li>
+	</ul>      
+</div>
+<add-article></add-article>

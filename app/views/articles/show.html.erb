@@ -1,0 +1,250 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="row">
+        <!-- main-gallery of the page
+        -->
+        <section class="main-banner post">
+          <div class="parallax-holder add-banner">
+            <div class="parallax-frame">
+              <img alt="Image Description" height="1420" src="<%= @article['image'] %>" width="2000"/>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- post-info of the page
+-->
+<section class="post-info">
+  <div class="progress-bar-holder" style="display: none">
+    <div class="progressbar">&nbsp;</div>
+    <span class="progress-info">&nbsp;</span>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <article class="main-post">
+          <%= @article['text'].html_safe %>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container-fluid">
+  <div class="row">
+    <!-- fullwidth-post of the page
+    -->
+    <div class="col-xs-12 fullwidth-post add">
+      <div class="row">
+        <!-- main-gallery of the page
+        -->
+        <div class="banner-gallery parallax-holder">
+          <div class="parallax-frame">
+            <img alt="Image Description" height="1333" src="<%= @article['image'] %>" width="2000"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- related-posts of the page
+-->
+<div class="container related-posts">
+  <div class="row">
+    <div class="col-xs-12">
+      <!-- post-buttons of the page
+      -->
+      <div class="post-buttons">
+        <!-- social-networks of the page
+        -->
+        <ul class="social-networks list-inline">
+          <li>
+            <a href="#">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-pinterest-square"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- comments-block of the page
+      -->
+      <div class="comments-block" style="display:none">
+        <!-- comments-heading of the page
+        -->
+        <header class="commnents-heading">
+          <h2>
+            <span class="txt">COMMENTS</span>
+          </h2>
+          <a class="threecomments" href="#">
+            <span class="num">3</span>
+            comments
+          </a>
+        </header>
+        <!-- comments-holder of the page
+        -->
+        <div class="comments-holder">
+          <!-- comments-box of the page
+          -->
+          <div class="comments-box">
+            <a class="alignleft" href="#">
+              <img alt="image description" src="http://placehold.it/101x103"/>
+            </a>
+            <div class="txt-block">
+              <div class="box">
+                <h3>
+                  <a href="#">Easton Maxwell</a>
+                </h3>
+                <ul class="comment-nav list-inline">
+                  <li>
+                    <time datetime="2015-01-01">
+                      <i class="fa fa-clock-o"></i>
+                      March 26, 2014 at 12:00am
+                    </time>
+                  </li>
+                  <li>
+                    <a href="#">Reply</a>
+                  </li>
+                </ul>
+              </div>
+              <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+            </div>
+          </div>
+          <!-- comments-box of the page
+          -->
+          <div class="comments-box">
+            <a class="alignleft" href="#">
+              <img alt="image description" src="http://placehold.it/102x102"/>
+            </a>
+            <div class="txt-block">
+              <div class="box">
+                <h3>
+                  <a href="#">Rodolph Braxton</a>
+                </h3>
+                <ul class="comment-nav list-inline">
+                  <li>
+                    <time datetime="2015-01-01">
+                      <i class="fa fa-clock-o"></i>
+                      March 26, 2014 at 12:00am
+                    </time>
+                  </li>
+                  <li>
+                    <a href="#">Reply</a>
+                  </li>
+                </ul>
+              </div>
+              <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat.</p>
+            </div>
+          </div>
+          <!-- onelevel of the page
+          -->
+          <div class="onelevel">
+            <!-- comments-box of the page
+            -->
+            <div class="comments-box">
+              <a class="mail-reply" href="#">
+                <i class="fa fa-share"></i>
+              </a>
+              <a class="alignleft" href="#">
+                <img alt="image description" src="http://placehold.it/102x103"/>
+              </a>
+              <div class="txt-block">
+                <div class="box">
+                  <h3>
+                    <a href="#">Ken Oz</a>
+                  </h3>
+                  <ul class="comment-nav list-inline">
+                    <li>
+                      <time datetime="2015-01-01">
+                        <i class="fa fa-clock-o"></i>
+                        March 26, 2014 at 12:00am
+                      </time>
+                    </li>
+                    <li>
+                      <a href="#">Reply</a>
+                    </li>
+                  </ul>
+                </div>
+                <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat.</p>
+              </div>
+            </div>
+            <!-- twolevel of the page
+            -->
+            <div class="twolevel">
+              <!-- comments-box of the page
+              -->
+              <div class="comments-box">
+                <a class="mail-reply" href="#">
+                  <i class="fa fa-share"></i>
+                </a>
+                <a class="alignleft" href="#">
+                  <img alt="image description" src="http://placehold.it/102x102"/>
+                </a>
+                <div class="txt-block">
+                  <div class="box">
+                    <h3>
+                      <a href="#">Odell Matthew</a>
+                    </h3>
+                    <ul class="comment-nav list-inline">
+                      <li>
+                        <time datetime="2015-01-01">
+                          <i class="fa fa-clock-o"></i>
+                          March 26, 2014 at 12:00am
+                        </time>
+                      </li>
+                      <li>
+                        <a href="#">Reply</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- form-area of the page
+        -->
+        <div class="form-area">
+          <h2>LEAVE A COMMENT</h2>
+          <!-- comment-form of the page
+          -->
+          <form action="#" class="comment-form validate-form">
+            <fieldset>
+              <div class="form-group">
+                <div class="form-col input-holder">
+                  <input class="form-control required" placeholder="Your Name *" type="text"></input>
+                </div>
+                <div class="form-col input-holder">
+                  <input class="form-control required-email" placeholder="Your Email*" type="email"></input>
+                </div>
+                <div class="form-col input-holder">
+                  <input class="form-control required" placeholder="Subject" type="text"></input>
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control textarea" cols="30" placeholder="Comment" rows="10"></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
