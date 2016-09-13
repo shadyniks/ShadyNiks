@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   protect_from_forgery with: :null_session
+  before_filter :init_meta_tags
 
   def all
     articles = Article.all
@@ -7,7 +8,8 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all.order(:sort_date)
+    @articles = Article.all.order(:sort_date).to_a
+    @featured_article = @articles.slice!(0)
   end
 
   def show
@@ -30,5 +32,14 @@ class ArticlesController < ApplicationController
   def destroy
     response = Article.delete(params["id"]);
     render :json => response
+  end
+
+  def init_meta_tags
+    @article_path = request.base_url + request.original_fullpath
+
+    @title = "ShadyNiks"
+    @description = "ShadyNiks is a blog dedicated to express the thoughts of the ambiguous, to explore the unimagined and to question 'why not'"
+    @image = "http://res.cloudinary.com/drl5zaarh/image/upload/v1473775184/black-bird_u5w5ts.jpg"
+    @url = @article_path
   end
 end

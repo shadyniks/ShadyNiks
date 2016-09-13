@@ -5747,3 +5747,15 @@ Primary use:	Company Portfolio
 	background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), transparent); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(rgba(0, 0, 0, 0.3), transparent); /* Standard syntax */
 }
+.nav-holder {
+	padding-top: 50px;
+}
+.nav-holder ul {
+	padding-bottom: 20px;
+}
+.nav-holder .social-networks li a.active .fa {
+	color: #ffcc39;
+}
+.post-buttons .social-networks li, .fb_iframe_widget span {
+	vertical-align: top !important;
+}
