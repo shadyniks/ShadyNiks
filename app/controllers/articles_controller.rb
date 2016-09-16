@@ -14,6 +14,15 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find_by(:urlname => params['id'])
+
+    @title = "ShadyNiks - " + @article.title
+    @image = @article.image
+    if defined?(@article.description)
+      @description = @article.description
+    end
+    if defined?(@article.tags)
+      @tags = @article.tags
+    end
   end
 
   def create
