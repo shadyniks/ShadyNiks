@@ -24,6 +24,6 @@ test:
 production:
   adapter: postgresql
   <<: *default
-  database: ec2-54-83-57-86.compute-1.amazonaws.com
+  database: postgres://wsxatmrpjbdbvu:v9jlTFwQibYoYz1skmxgfkncsw@ec2-54-83-57-86.compute-1.amazonaws.com:5432/d2m5l3ek267aoh
   username: wsxatmrpjbdbvu
   password: v9jlTFwQibYoYz1skmxgfkncsw
