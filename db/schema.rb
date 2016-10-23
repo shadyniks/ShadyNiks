@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160911193229) do
+ActiveRecord::Schema.define(version: 20161023071339) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160911193229) do
     t.string   "urlname"
     t.string   "category"
     t.bigint   "sort_date"
+    t.string   "preview"
     t.index ["urlname"], name: "index_articles_on_urlname", unique: true
   end
 

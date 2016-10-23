@@ -4,7 +4,7 @@
 			<span class="toolbar__label tc-white fs-title" ng-bind="otherObj.mode == 'create' ? 'Add Article' : 'Edit Article'"></span>
 
 			<div class="toolbar__right">
-				<lx-button lx-color="white" lx-size="l" lx-type="icon">
+				<lx-button lx-color="white" lx-size="l" lx-type="icon" lx-dialog-close>
 					<lx-icon lx-id="close"></lx-icon>
 				</lx-button>
 			</div>
@@ -26,6 +26,9 @@
 			</div>
 			<lx-text-field lx-label="Body">
 				<textarea name="text" ng-model="formObj.text" ng-required="true"></textarea>
+			</lx-text-field>
+			<lx-text-field lx-label="Preview">
+				<textarea name="preview" ng-model="formObj.preview" ng-required="true"></textarea>
 			</lx-text-field>
 			<div flex-container="row" flex-gutter="24">
 				<div flex-item>
