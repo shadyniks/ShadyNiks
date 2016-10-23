@@ -17,8 +17,8 @@ class ArticlesController < ApplicationController
 
     @title = "ShadyNiks - " + @article.title
     @image = @article.image
-    if defined?(@article.description)
-      @description = @article.description
+    if defined?(@article.text)
+      @description = @article.text
     end
     if defined?(@article.tags)
       @tags = @article.tags
